@@ -1,0 +1,14 @@
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Common.deps.json
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Common.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.csprojAssemblyReference.cache
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.AssemblyInfoInputs.cache
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.AssemblyInfo.cs
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Common.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Domain.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Repository.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Domain.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\bin\Debug\netstandard2.0\SportsX.Repository.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.csproj.CopyComplete
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Common\obj\Debug\netstandard2.0\SportsX.Common.csproj.CoreCompileInputs.cache

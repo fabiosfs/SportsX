@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SportsX.Common.Configuration;
+using SportsX.Repository.Context;
 
 namespace SportsX
 {
@@ -28,6 +30,14 @@ namespace SportsX
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddDbContext<SportsXDbContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("SportsXDbContext"));
+            });
+
+            MappingProfileConfiguration.ConfigureProfilers(services, typeof(Startup));
+
+            services.ConfigureDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

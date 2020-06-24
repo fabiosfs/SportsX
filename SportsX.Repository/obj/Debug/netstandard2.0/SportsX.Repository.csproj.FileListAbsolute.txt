@@ -1,0 +1,9 @@
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\bin\Debug\netstandard2.0\SportsX.Repository.deps.json
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\bin\Debug\netstandard2.0\SportsX.Repository.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.AssemblyInfoInputs.cache
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.AssemblyInfo.cs
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\bin\Debug\netstandard2.0\SportsX.Repository.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.csproj.CoreCompileInputs.cache
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.dll
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.pdb
+C:\Users\fabio\source\repos\SportsX\SportsX.Repository\obj\Debug\netstandard2.0\SportsX.Repository.csprojAssemblyReference.cache
