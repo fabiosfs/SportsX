@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 namespace SportsX.Repository.Interfaces
 {
+    // Interface para facilitação dos metodos base de um crud
     public interface IBaseRepository<TEntity, TEntityId>
     {
         Task<IEnumerable<TEntity>> GetAllAsync();

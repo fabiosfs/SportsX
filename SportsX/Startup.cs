@@ -30,13 +30,13 @@ namespace SportsX
             {
                 configuration.RootPath = "ClientApp/build";
             });
-
+            // Configuração da string de conexão do banco de dados
             services.AddDbContext<SportsXDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("SportsXDbContext"));
             });
-
+            // Chamada do metodo de configuração do automapper
             MappingProfileConfiguration.ConfigureProfilers(services, typeof(Startup));
-
+            // Chamada do metodo de configuração das injeções de depêndencia
             services.ConfigureDependencies();
         }
 

@@ -9,6 +9,7 @@ namespace SportsX.Domain.Services
 {
     public class ClientTypeDomain : IClientTypeDomain
     {
+        // Classe contendo a regra de negócio da TipoCliente
         protected readonly IClientTypeRepository _clientTypeRepository;
         protected readonly IMapper _mapper;
         public ClientTypeDomain(IClientTypeRepository clientTypeRepository, IMapper mapper) 

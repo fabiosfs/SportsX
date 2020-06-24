@@ -4,12 +4,12 @@ using SportsX.Repository.Entities;
 
 namespace SportsX.Common.ProfileConfiguration
 {
-    public class ClassificationProfile : Profile
+    public class ClientProfile : Profile
     {
-        // Classe de configuração do automapper para Classificação
-        public ClassificationProfile()
+        // Classe de configuração do automapper para Cliente
+        public ClientProfile()
         {
-            CreateMap<Classification, ClassificationDto>()
+            CreateMap<Client, ClientDto>()
                 .ForMember(x => x.Id, opt => opt.MapFrom(x => x.Id))
                 .ForMember(x => x.Name, opt => opt.MapFrom(x => x.Name))
                 .ReverseMap();

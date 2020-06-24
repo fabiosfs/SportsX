@@ -9,6 +9,7 @@ namespace SportsX.Domain.Services
 {
     public class ClassificationDomain : IClassificationDomain
     {
+        // Classe contendo a regra de negócio da Classificação
         protected readonly IClassificationRepository _classificationRepository;
         protected readonly IMapper _mapper;
         public ClassificationDomain(IClassificationRepository classificationRepository, IMapper mapper) 

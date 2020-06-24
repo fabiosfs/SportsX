@@ -6,6 +6,7 @@ namespace SportsX.Common.ProfileConfiguration
 {
     public class ClientTypeProfile : Profile
     {
+        // Classe de configuração do automapper para Tipo de Cliente
         public ClientTypeProfile()
         {
             CreateMap<ClientType, ClientTypeDto>()

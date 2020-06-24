@@ -5,6 +5,7 @@ using System;
 
 namespace SportsX.Repository.Utils
 {
+    // Classe para facilitar o mapeamento das colunas padrão
     static class MapUtils<TEntity, TEntityId>
         where TEntity : BaseEntity<TEntityId>
         where TEntityId : struct

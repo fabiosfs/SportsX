@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportsX.Repository.Services
 {
+    // Classe para facilitação de implementação dos metodos base de um crud
     public class BaseRepository<TEntity, TEntityId> : IBaseRepository<TEntity, TEntityId>
         where TEntity : BaseEntity<TEntityId>
         where TEntityId : struct

@@ -15,6 +15,7 @@ namespace SportsX.Repository.Context
             modelBuilder.HasDefaultSchema("dbo");
             modelBuilder.ApplyConfiguration(new ClientTypeMap());
             modelBuilder.ApplyConfiguration(new ClassificationMap());
+            modelBuilder.ApplyConfiguration(new ClientMap());
         }
     }
 }
