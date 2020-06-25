@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\AddClient.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SportsX.Common\SportsX.Common.csproj" />
   </ItemGroup>
 

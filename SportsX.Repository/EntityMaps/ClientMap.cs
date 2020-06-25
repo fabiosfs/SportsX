@@ -17,6 +17,42 @@ namespace SportsX.Repository.EntityMaps
                 .HasColumnName("Name")
                 .HasColumnType("varchar(100)")
                 .IsRequired();
+
+            builder.Property(x => x.CompanyName)
+                .HasColumnName("CompanyName")
+                .HasColumnType("varchar(100)");
+
+            builder.Property(x => x.CpfCnpj)
+                .HasColumnName("CpfCnpj")
+                .HasColumnType("varchar(14)")
+                .IsRequired();
+
+            builder.Property(x => x.Email)
+                .HasColumnName("Email")
+                .HasColumnType("varchar(500)")
+                .IsRequired();
+
+            builder.Property(x => x.Cep)
+                .HasColumnName("Cep")
+                .HasColumnType("varchar(8)");
+
+            builder.Property(x => x.IdClassification)
+                .HasColumnName("IdClassification")
+                .HasColumnType("int")
+                .IsRequired();
+
+            builder.Property(x => x.IdClientType)
+                .HasColumnName("IdClientType")
+                .HasColumnType("int")
+                .IsRequired();
+
+            builder.HasOne(a => a.Classification)
+                .WithMany(b => b.Clients)
+                .HasForeignKey(b => b.IdClassification);
+
+            builder.HasOne(a => a.ClientType)
+                .WithMany(b => b.Clients)
+                .HasForeignKey(b => b.IdClientType);
         }
     }
 }

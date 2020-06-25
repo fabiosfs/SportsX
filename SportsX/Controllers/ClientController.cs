@@ -31,5 +31,29 @@ namespace SportsX.Controllers
             var returned = await _clientDomain.GetByIdAsync(id);
             return returned;
         }
+
+        // POST: api/Client
+        [HttpPost]
+        public async Task<ClientDto> Post([FromBody] ClientDto client)
+        {
+            var returned = await _clientDomain.InsertAsync(client);
+            return returned;
+        }
+
+        // PUT: api/Client
+        [HttpPut]
+        public async Task<ClientDto> Put([FromBody] ClientDto client)
+        {
+            var returned = await _clientDomain.UpdateAsync(client);
+            return returned;
+        }
+
+        // Delete: api/Client/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            await _clientDomain.DeleteAsync(id);
+            return Ok();
+        }
     }
 }

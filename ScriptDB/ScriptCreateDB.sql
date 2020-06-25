@@ -63,7 +63,7 @@ create table client(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
 	CompanyName varchar(100) null,
-	CpfCnpj varchar(14) not null,
+	CpfCnpj varchar(14) null,
 	Email varchar(500) not null,
 	Cep varchar(8) null,
 	IdClassification int not null,
@@ -71,7 +71,7 @@ create table client(
 	Excluded bit not null default(0),
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null,
-	constraint Fk_Client_Classification foreign key (IdClassification) references classification(Id)
+	constraint Fk_Client_Classification foreign key (IdClassification) references classification(Id),
 	constraint Fk_Client_ClientType foreign key (IdClientType) references clientType(Id)
 )
 go

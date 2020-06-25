@@ -17,6 +17,10 @@ namespace SportsX.Repository.EntityMaps
                 .HasColumnName("Name")
                 .HasColumnType("varchar(100)")
                 .IsRequired();
+
+            builder.HasMany(x => x.Clients)
+                .WithOne(x => x.ClientType)
+                .HasForeignKey(x => x.IdClientType);
         }
     }
 }

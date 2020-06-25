@@ -46,6 +46,7 @@ namespace SportsX.Repository.Services
         public virtual async Task<TEntity> UpdateAsync(TEntity entity)
         {
             var entityDb = await GetByIdAsync(entity.Id);
+            entity.DtCriation = entityDb.DtCriation;
             _dbContext.Entry(entityDb).Property(x => x.Id).IsModified = false;
             _dbContext.Entry(entityDb).CurrentValues.SetValues(entity);
             await _dbContext.SaveChangesAsync();
@@ -55,7 +56,8 @@ namespace SportsX.Repository.Services
         public virtual async Task DeleteAsync(TEntityId id)
         {
             var entityDb = await GetByIdAsync(id);
-            _dbContext.Remove(entityDb);
+            entityDb.Excluded = true;
+            _dbContext.Entry(entityDb).Property(x => x.Id).IsModified = false;
             await _dbContext.SaveChangesAsync();
         }
     }

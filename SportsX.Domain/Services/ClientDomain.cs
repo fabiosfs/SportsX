@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SportsX.Domain.Dto;
 using SportsX.Domain.Interfaces;
+using SportsX.Repository.Entities;
 using SportsX.Repository.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -28,6 +29,25 @@ namespace SportsX.Domain.Services
         {
             var response = await _clientRepository.GetByIdAsync(id);
             return _mapper.Map<ClientDto>(response);
+        }
+
+        public async Task<ClientDto> InsertAsync(ClientDto client)
+        {
+            var entity = _mapper.Map<Client>(client);
+            var response = await _clientRepository.InsertAsync(entity);
+            return _mapper.Map<ClientDto>(response);
+        }
+
+        public async Task<ClientDto> UpdateAsync(ClientDto client)
+        {
+            var entity = _mapper.Map<Client>(client);
+            var response = await _clientRepository.UpdateAsync(entity);
+            return _mapper.Map<ClientDto>(response);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            await _clientRepository.DeleteAsync(id);
         }
     }
 }
