@@ -13,6 +13,15 @@ Foi adicionado em todas as tabelas uma coluna de data de criação, data de últ
 
 Os scripts de criação da base de dados e .mdf se encontram no diretório ScriptDB na pasta raiz.
 
+# Pacotes React:
+react-bootstrap
+
+react-router-bootstrap
+
+react-icons
+
+react-input-mask@next
+
 # Pacotes Nuget:
 Microsoft.EntityFrameworkCore
 

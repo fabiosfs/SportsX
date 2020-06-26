@@ -15,6 +15,7 @@ namespace SportsX.Common.Configuration
                 x.AddProfile(new ClientTypeProfile());
                 x.AddProfile(new ClassificationProfile());
                 x.AddProfile(new ClientProfile());
+                x.AddProfile(new TelephoneProfile());
             }, type);
         }
     }

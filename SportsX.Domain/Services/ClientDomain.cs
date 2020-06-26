@@ -19,9 +19,9 @@ namespace SportsX.Domain.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ClientDto>> GetAllAsync()
+        public async Task<IEnumerable<ClientDto>> GetAllAsync(int? idClientType)
         {
-            var response = await _clientRepository.GetAllAsync();
+            var response = await _clientRepository.GetAllAsync(idClientType);
             return _mapper.Map<IEnumerable<ClientDto>>(response);
         }
 

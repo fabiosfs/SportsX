@@ -24,7 +24,7 @@ namespace SportsX.Repository.EntityMaps
 
             builder.Property(x => x.CpfCnpj)
                 .HasColumnName("CpfCnpj")
-                .HasColumnType("varchar(14)")
+                .HasColumnType("varchar(18)")
                 .IsRequired();
 
             builder.Property(x => x.Email)
@@ -34,7 +34,7 @@ namespace SportsX.Repository.EntityMaps
 
             builder.Property(x => x.Cep)
                 .HasColumnName("Cep")
-                .HasColumnType("varchar(8)");
+                .HasColumnType("varchar(10)");
 
             builder.Property(x => x.IdClassification)
                 .HasColumnName("IdClassification")
@@ -53,6 +53,10 @@ namespace SportsX.Repository.EntityMaps
             builder.HasOne(a => a.ClientType)
                 .WithMany(b => b.Clients)
                 .HasForeignKey(b => b.IdClientType);
+
+            builder.HasMany(x => x.Telephones)
+                .WithOne(x => x.Client)
+                .HasForeignKey(x => x.IdClient);
         }
     }
 }

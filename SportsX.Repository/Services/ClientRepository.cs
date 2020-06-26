@@ -1,40 +1,41 @@
-﻿using SportsX.Repository.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SportsX.Repository.Entities;
 using SportsX.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SportsX.Repository.Services
 {
     public class ClientRepository : BaseRepository<Client, int>, IClientRepository
     {
-        public ClientRepository(DbContext dbContext) : base(dbContext)
+        public ClientRepository(DbContext dbContext) 
+            : base(dbContext)
         {
         }
 
-        public override async Task<IEnumerable<Client>> GetAllAsync()
+        public async Task<IEnumerable<Client>> GetAllAsync(int? idClientType)
         {
-            var retorno = await _dbSet
+            var response = await _dbSet
                 .Include(x => x.ClientType)
                 .Include(x => x.Classification)
-                .Where(x => !x.Excluded)
+                .Include(x => x.Telephones)
+                .Where(x => idClientType == null || x.IdClientType == idClientType)
                 .ToListAsync();
-            return retorno;
+
+            return response;
         }
 
-        public virtual async Task<Client> GetByIdAsync(int id)
+        public override async Task<Client> GetByIdAsync(int id)
         {
-            var retorno = await _dbSet
+            var response = await _dbSet
                 .Include(x => x.ClientType)
                 .Include(x => x.Classification)
+                .Include(x => x.Telephones)
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
 
-            if (retorno == null || retorno.Excluded)
-                retorno = null;
-
-            return retorno;
+            return response;
         }
     }
 }

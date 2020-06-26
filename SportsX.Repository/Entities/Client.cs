@@ -1,4 +1,6 @@
-﻿namespace SportsX.Repository.Entities
+﻿using System.Collections.Generic;
+
+namespace SportsX.Repository.Entities
 {
     public class Client : BaseEntity<int>
     {
@@ -11,5 +13,6 @@
         public Classification Classification { get; set; }
         public int IdClientType { get; set; }
         public ClientType ClientType { get; set; }
+        public IEnumerable<Telephone> Telephones { get; set; }
     }
 }

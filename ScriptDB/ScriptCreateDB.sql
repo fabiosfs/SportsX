@@ -27,7 +27,6 @@ go
 create table clientType(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
-	Excluded bit not null default(0),
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null
 )
@@ -44,7 +43,6 @@ go
 create table classification(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
-	Excluded bit not null default(0),
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null
 )
@@ -63,12 +61,11 @@ create table client(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
 	CompanyName varchar(100) null,
-	CpfCnpj varchar(14) null,
+	CpfCnpj varchar(18) null,
 	Email varchar(500) not null,
-	Cep varchar(8) null,
+	Cep varchar(10) null,
 	IdClassification int not null,
 	IdClientType int not null,
-	Excluded bit not null default(0),
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null,
 	constraint Fk_Client_Classification foreign key (IdClassification) references classification(Id),
@@ -82,7 +79,7 @@ go
 create table telephone(
 	Id int not null Primary Key identity,
 	IdClient int not null,
-	Excluded bit not null default(0),
+	Number varchar(15) not null,
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null,
 	constraint Fk_Telephone_Client foreign key (IdClient) references client(Id)

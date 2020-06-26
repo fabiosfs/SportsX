@@ -1,4 +1,6 @@
-﻿namespace SportsX.Domain.Dto
+﻿using System.Collections.Generic;
+
+namespace SportsX.Domain.Dto
 {
     public class ClientDto
     {
@@ -12,5 +14,6 @@
         public ClassificationDto Classification { get; set; }
         public int IdClientType { get; set; }
         public ClientTypeDto ClientType { get; set; }
+        public IEnumerable<TelephoneDto> Telephones { get; set; }
     }
 }

@@ -25,12 +25,14 @@ namespace SportsX.Common.Configuration
             services.AddScoped(typeof(IClientTypeRepository), typeof(ClientTypeRepository));
             services.AddScoped(typeof(IClassificationRepository), typeof(ClassificationRepository));
             services.AddScoped(typeof(IClientRepository), typeof(ClientRepository));
+            services.AddScoped(typeof(ITelephoneRepository), typeof(TelephoneRepository));
 
 
             //// Domain
             services.AddScoped(typeof(IClientTypeDomain), typeof(ClientTypeDomain));
             services.AddScoped(typeof(IClassificationDomain), typeof(ClassificationDomain));
             services.AddScoped(typeof(IClientDomain), typeof(ClientDomain));
+            services.AddScoped(typeof(ITelephoneDomain), typeof(TelephoneDomain));
         }
     }
 }

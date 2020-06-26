@@ -17,10 +17,10 @@ namespace SportsX.Controllers
         }
 
         // GET: api/Client
-        [HttpGet]
-        public async Task<IEnumerable<ClientDto>> Get()
+        [HttpGet("clients/{idClientType?}")]
+        public async Task<IEnumerable<ClientDto>> Get(int? idClientType)
         {
-            var returned = await _clientDomain.GetAllAsync();
+            var returned = await _clientDomain.GetAllAsync(idClientType);
             return returned;
         }
 

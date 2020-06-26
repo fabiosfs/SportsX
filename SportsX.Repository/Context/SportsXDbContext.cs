@@ -16,6 +16,7 @@ namespace SportsX.Repository.Context
             modelBuilder.ApplyConfiguration(new ClientTypeMap());
             modelBuilder.ApplyConfiguration(new ClassificationMap());
             modelBuilder.ApplyConfiguration(new ClientMap());
+            modelBuilder.ApplyConfiguration(new TelephoneMap());
         }
     }
 }

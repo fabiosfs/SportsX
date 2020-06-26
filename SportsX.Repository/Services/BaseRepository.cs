@@ -22,18 +22,15 @@ namespace SportsX.Repository.Services
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            var retorno = await _dbSet.Where(x => !x.Excluded).ToListAsync();
-            return retorno;
+            var response = await _dbSet.ToListAsync();
+            return response;
         }
 
         public virtual async Task<TEntity> GetByIdAsync(TEntityId id)
         {
-            var retorno = await _dbSet.FindAsync(id);
+            var response = await _dbSet.FindAsync(id);
 
-            if (retorno == null || retorno.Excluded)
-                retorno = null;
-
-            return retorno;
+            return response;
         }
 
         public virtual async Task<TEntity> InsertAsync(TEntity entity)
@@ -56,8 +53,8 @@ namespace SportsX.Repository.Services
         public virtual async Task DeleteAsync(TEntityId id)
         {
             var entityDb = await GetByIdAsync(id);
-            entityDb.Excluded = true;
-            _dbContext.Entry(entityDb).Property(x => x.Id).IsModified = false;
+            _dbContext.Attach(entityDb);
+            _dbContext.Remove(entityDb);
             await _dbContext.SaveChangesAsync();
         }
     }

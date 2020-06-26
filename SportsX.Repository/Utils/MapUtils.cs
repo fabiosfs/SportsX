@@ -27,10 +27,6 @@ namespace SportsX.Repository.Utils
             builder.Property(x => x.DtUpdated)
                 .HasColumnName("DtUpdated")
                 .HasColumnType("datetime");
-
-            builder.Property(x => x.Excluded)
-                .HasColumnName("Excluded")
-                .HasColumnType("bit");
             
             return builder;
         }

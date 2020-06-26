@@ -20,6 +20,7 @@ namespace SportsX.Common.ProfileConfiguration
                 .ForMember(x => x.Classification, opt => opt.MapFrom(x => x.Classification))
                 .ForMember(x => x.IdClientType, opt => opt.MapFrom(x => x.IdClientType))
                 .ForMember(x => x.ClientType, opt => opt.MapFrom(x => x.ClientType))
+                .ForMember(x => x.Telephones, opt => opt.MapFrom(x => x.Telephones))
                 .ReverseMap();
         }
     }

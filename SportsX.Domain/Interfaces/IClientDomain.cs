@@ -6,7 +6,7 @@ namespace SportsX.Domain.Interfaces
 {
     public interface IClientDomain
     {
-        Task<IEnumerable<ClientDto>> GetAllAsync();
+        Task<IEnumerable<ClientDto>> GetAllAsync(int? idClientType);
         Task<ClientDto> GetByIdAsync(int id);
         Task<ClientDto> InsertAsync(ClientDto client);
         Task<ClientDto> UpdateAsync(ClientDto client);
