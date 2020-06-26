@@ -255,6 +255,10 @@ export class FormClient extends Component {
             message += 'O nome é obrigatório.\n';
         if (this.state.client.email == 0)
             message += 'O e-mail é obrigatório.\n';
+        if (!(this.state.client.email.split('@').length == 2
+            && this.state.client.email.split('@')[1].split('.').length > 0
+            && this.state.client.email.split('@')[1].split('.').length <= 3))
+            message += 'O e-mail informado não é valido.\n';
         if (message != '')
             alert(message);
         else {
