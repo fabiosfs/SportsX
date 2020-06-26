@@ -243,7 +243,7 @@ export class FormClient extends Component {
                     
                 </Col>
                 <Col>
-                    <Button type="button" onClick={() => { this.handleRemoveTelephone(telephone) }} >Remover</Button>
+                    <Button variant="danger" type="button" onClick={() => { this.handleRemoveTelephone(telephone) }} >Remover</Button>
                 </Col>
             </Form.Row>
         });
