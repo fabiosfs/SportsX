@@ -9,7 +9,7 @@ https://nodejs.org/en/
 Após instalar o Node.Js caso não tenha instalado, fechar o Visual Studio caso esteja aberto e rebuildar o projeto antes de inciar a execução do mesmo.
 
 # Banco de dados
-Foi adicionado em todas as tabelas uma coluna de data de criação, data de última atualização.
+Foi adicionado em todas as tabelas uma coluna de data de criação, data de última atualização e o campo para controle de exclusão lógica implementando um teste do soft-delete no entity.
 
 Os scripts de criação da base de dados e .mdf se encontram no diretório ScriptDB na pasta raiz.
 

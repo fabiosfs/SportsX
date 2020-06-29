@@ -11,5 +11,6 @@ namespace SportsX.Repository.Entities
         public TId Id { get; set; }
         public DateTime DtCriation { get; set; }
         public DateTime? DtUpdated { get; set; }
+        public bool Excluded { get; set; }
     }
 }

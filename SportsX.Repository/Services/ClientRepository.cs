@@ -20,7 +20,7 @@ namespace SportsX.Repository.Services
                 .Include(x => x.ClientType)
                 .Include(x => x.Classification)
                 .Include(x => x.Telephones)
-                .Where(x => idClientType == null || x.IdClientType == idClientType)
+                .Where(x => !x.Excluded && (idClientType == null || x.IdClientType == idClientType))
                 .ToListAsync();
 
             return response;
@@ -32,7 +32,7 @@ namespace SportsX.Repository.Services
                 .Include(x => x.ClientType)
                 .Include(x => x.Classification)
                 .Include(x => x.Telephones)
-                .Where(x => x.Id == id)
+                .Where(x => !x.Excluded && x.Id == id)
                 .FirstOrDefaultAsync();
 
             return response;
