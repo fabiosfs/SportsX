@@ -28,7 +28,8 @@ create table clientType(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
 	DtCriation datetime not null default(getdate()),
-	DtUpdated datetime null
+	DtUpdated datetime null,
+	Excluded bit not null default(0)
 )
 go
 -- Execução da procedure de criação de trigger para atualização automatica do campo DtUpdated
@@ -44,7 +45,8 @@ create table classification(
 	Id int not null Primary Key identity,
 	Name varchar(100) not null,
 	DtCriation datetime not null default(getdate()),
-	DtUpdated datetime null
+	DtUpdated datetime null,
+	Excluded bit not null default(0)
 )
 go
 -- Execução da procedure de criação de trigger para atualização automatica do campo DtUpdated
@@ -68,6 +70,7 @@ create table client(
 	IdClientType int not null,
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null,
+	Excluded bit not null default(0),
 	constraint Fk_Client_Classification foreign key (IdClassification) references classification(Id),
 	constraint Fk_Client_ClientType foreign key (IdClientType) references clientType(Id)
 )
@@ -82,6 +85,7 @@ create table telephone(
 	Number varchar(15) not null,
 	DtCriation datetime not null default(getdate()),
 	DtUpdated datetime null,
+	Excluded bit not null default(0),
 	constraint Fk_Telephone_Client foreign key (IdClient) references client(Id)
 )
 go

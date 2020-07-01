@@ -22,7 +22,7 @@ namespace SportsX.Repository.Services
             var telephoneUpdate = telephonesDb;
 
             // Atualiza os telefones que não foram excluidos
-            telephoneUpdate.Where(x => telephones.Any(y => y.Id == x.Id && y.Number != x.Number))
+            telephoneUpdate.Where(x => telephones.Any(y => y.Id == x.Id && y.Number != x.Number && !x.Excluded))
                 .ToList().ForEach(telephone =>
             {
                 telephone.Number = telephones
@@ -39,11 +39,11 @@ namespace SportsX.Repository.Services
             telephoneUpdate = telephonesDb;
 
             // Remove os telefones excluidos
-            telephonesDb.Where(x => !telephones.Any(y => y.Id == x.Id))
+            telephonesDb.Where(x => !telephones.Any(y => y.Id == x.Id && !x.Excluded))
                 .ToList().ForEach(telephone =>
             {
-                _dbContext.Attach(telephone);
-                _dbContext.Remove(telephone);
+                telephone.Excluded = true;
+                _dbContext.Entry(telephone).CurrentValues.SetValues(telephone);
                 _dbContext.SaveChanges();
             });
             
